@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+//Route::get('/', function () {
+//     return view('home');
+// })->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
+Route::get('/', function () {
+return view('admin_template');
+})->middleware('auth');
+
+Route::get('/home', function () {
+return view('admin_template');
+})->middleware('auth');
+
+Route::get('/golongan', function () {
+return view('golongan');
+})->middleware('auth');
